@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+@theme {
+  --font-syne: 'Syne', sans-serif;
+  --font-inter: 'Inter', sans-serif;
+}
+
+:root {
+  --background: #000000;
+  --foreground: #ffffff;
+  --muted: #888888;
+  --card-bg: #070707;
+  --card-border: rgba(255, 255, 255, 0.08);
+  --accent-cyan: #06b6d4;
+  --accent-emerald: #10b981;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6, .font-syne {
+  font-family: 'Syne', sans-serif;
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #030303;
+}
+::-webkit-scrollbar-thumb {
+  background: #1f1f1f;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #333333;
+}
+
+/* Subtle glow and background mesh utilities */
+.glow-subtle {
+  box-shadow: 0 0 50px -10px rgba(6, 182, 212, 0.08);
+}
+
+.glow-card {
+  box-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+.glow-card-hover:hover {
+  box-shadow: 0 20px 40px -15px rgba(6, 182, 212, 0.12), 0 0 0 1px rgba(255, 255, 255, 0.2);
+}
+
+/* Glassmorphism */
+.glass-panel {
+  background: rgba(10, 10, 10, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Text stroke utility for artistic headlines */
+.text-stroke {
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.35);
+  color: transparent;
+}
+
+/* Shimmer animated gradient for glowing name display */
+@keyframes textShimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-text-shimmer {
+  background-size: 200% auto;
+  animation: textShimmer 6s ease-in-out infinite;
+}
